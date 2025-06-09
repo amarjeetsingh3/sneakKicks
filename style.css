@@ -299,25 +299,71 @@
   }
    
   /* Footer */
-  footer {
-    background-color: #1a1a1a;
-    color: white;
-    text-align: center;
-    padding: 1.5em 1em;
-    margin-top: 4em;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  .footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
   }
    
-  footer a {
-    color: #ff6f61;
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+  }
+   
+  .footer-col {
+    flex: 1 1 200px;
+  }
+   
+  .footer h3, .footer h4 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+   
+  .footer p, .footer li {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+   
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+   
+  .footer ul li {
+    margin-bottom: 8px;
+  }
+   
+  .footer a {
+    color: #bbb;
     text-decoration: none;
-    transition: color 0.3s ease;
   }
    
-  footer a:hover {
-    color: #e35b4b;
+  .footer a:hover {
+    text-decoration: underline;
   }
+   
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+  }
+   
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+  }
+   
+  .footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+  }
+   
   /* SneakKicks Navbar */
 .navbar {
     display: flex;
@@ -337,8 +383,8 @@
   }
    
   .logo-icon {
-    width: 34px;
-    height: 34px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
   }
    
