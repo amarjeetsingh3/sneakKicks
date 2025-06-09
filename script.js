@@ -85,6 +85,45 @@ function updateCartCount() {
     cartCount.textContent = cart.length;
   }
 }
+// CONTACT PAGE FORM SUBMISSION
+// CONTACT PAGE FORM SUBMISSION
+function initContactForm() {
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission
+
+      // Get form data
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const inquiryCategory = document.getElementById("inquiry_category").value;
+      const message = document.getElementById("message").value;
+      const age = document.getElementById("age").value;
+      const rating = document.getElementById("rating").value;
+
+      // Send data to Google Analytics
+      if (typeof gtag === "function") {
+        gtag("event", "form_submit", {
+          event_category: "Contact Form",
+          event_label: inquiryCategory,
+          value: rating,
+          user_name: name,
+          user_email: email,
+          user_age: age,
+          message_length: message.length,
+        });
+      } else {
+        console.log("gtag is not defined. Google Analytics might be blocked or not loaded.");
+      }
+
+      // Provide user feedback and reset the form
+      alert("Thank you for your message! We will get back to you soon.");
+      contactForm.reset();
+    });
+  }
+}
+
  
 window.onload = () => {
   if (document.querySelectorAll(".add-to-cart").length > 0) {
@@ -94,4 +133,3 @@ window.onload = () => {
     initCart();
   }
 };
- 
