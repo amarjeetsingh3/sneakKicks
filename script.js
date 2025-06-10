@@ -1,4 +1,4 @@
-// script.js
+/ script.js
  
 let cart = JSON.parse(localStorage.getItem("sneakCart")) || [];
  
@@ -22,6 +22,13 @@ function initIndex() {
   });
  
   updateCartCount();
+
+  // In initIndex(), when adding to cart
+   gtag('event', 'add_to_cart', {
+    item_name: name, // This maps to Product Name custom dimension
+    item_price: price, // This maps to Product Price custom metric (see below)
+  // ... other parameters
+});
 }
  
 // CART PAGE
@@ -51,6 +58,12 @@ function initCart() {
  
     total.textContent = `₹${sum.toFixed(2)}`;
     updateCartCount();
+    // Example in updateCartCount() or initCart()
+    if (typeof gtag === "function") {
+      gtag('event', 'cart_status', { // or 'page_view' for cart.html
+       cart_length: cart.length // This maps to Cart Item Count custom metric
+});
+}
   }
  
   // Event delegation for remove buttons
@@ -133,3 +146,4 @@ window.onload = () => {
     initCart();
   }
 };
+ 
