@@ -147,7 +147,14 @@
         <div class="footer-col">
           <h4>Customer Care</h4>
           <ul>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="contact.html" id="footer-contact-link"
+                  onclick="window.dataLayer.push({
+                    'event': 'footer_link_click',
+                    'link_category': 'Customer Care',
+                    'link_text': 'Contact Us',
+                    'link_url': this.href, // Captures the full URL
+                    'link_id': this.id // Captures the ID of the link
+                      });">Contact Us</a></li>
             <li><a href="#">Return Policy</a></li>
             <li><a href="#">Terms & Conditions</a></li>
             <li><a href="#">FAQs</a></li>
